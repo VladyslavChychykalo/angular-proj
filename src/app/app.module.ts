@@ -1,17 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { HomeComponent } from './home/home.component';
 import { PostComponent } from './home/post/post.component';
 import { PostFormComponent } from './home/post-form/post-form.component';
-
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostModalComponent } from './home/post-modal/post-modal.component';
+import { AboutComponent } from './about/about.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { CoffeePostsComponent } from './posts/coffee-posts.component';
+import { CoffeePostComponent } from './post/coffee-post.component';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, PostComponent, PostFormComponent, PostModalComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    PostComponent,
+    PostFormComponent,
+    PostModalComponent,
+    AboutComponent,
+    ContactsComponent,
+    CoffeePostsComponent,
+    CoffeePostComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
