@@ -1,0 +1,14 @@
+<div>
+  <app-post-form (onAdd)="addFeedback($event)"></app-post-form>
+  <app-post
+    *ngFor="let f of feedbacks"
+    [feedback]="f"
+    (onDelete)="deleteFeedback($event)"
+    (onEdit)="editFeedback($event)"
+  ></app-post>
+  <app-post-modal
+    [editId]="objForEditing"
+    *ngIf="appModaService.isModalOpen"
+    (onEditSave)="saveEditFeedback($event)"
+  ></app-post-modal>
+</div>

@@ -1,0 +1,110 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  position: relative;
+  padding: 16px;
+  max-width: 480px;
+  width: 100%;
+  min-height: 320px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.btnModal {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  border-radius: 10px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #666;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+.form-control {
+  display: block;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+
+  label {
+    display: block;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    margin-bottom: 0;
+  }
+
+  .validation {
+    color: red;
+  }
+}
+
+.card {
+  padding: 1rem;
+  border: #ccc 1px dotted;
+  margin: 0.7rem 0;
+  margin-top: 40px;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+hr {
+  margin: 0.5rem 0;
+}
+
+input,
+textarea {
+  // классы ng-valid, ng-touched есть уже на элементе, после добавления Значения Validate
+  &.ng-invalid.ng-touched {
+    border: 2px solid red;
+  }
+
+  &.ng-valid.ng-touched {
+    border: 2px solid green;
+  }
+}

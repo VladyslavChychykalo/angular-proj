@@ -1,0 +1,14 @@
+<div class="card">
+  <h4>{{ feedback.name }}</h4>
+  <p>{{ feedback.email }}</p>
+  <p>{{ feedback.feedback }}</p>
+  <p>{{ feedback.rate }}</p>
+  <button type="button" (click)="onDeleteFeedback()">Delete</button>
+  <button
+    type="button"
+    (click)="onEditFeedback()"
+    (click)="appModalService.onOpenModal()"
+  >
+    Edit
+  </button>
+</div>

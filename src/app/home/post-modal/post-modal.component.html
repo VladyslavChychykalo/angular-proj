@@ -1,0 +1,106 @@
+<div class="backdrop">
+  <div class="modal">
+    <button class="btnModal" (click)="appModalService.onCloseModal()">
+      &#10006;
+    </button>
+
+    <form
+      class="card"
+      action=""
+      [formGroup]="form"
+      (ngSubmit)="onSaveEditFeedback()"
+      (ngSubmit)="appModalService.onCloseModal()"
+    >
+      <h2>Change your feedback</h2>
+
+      <div class="form-control">
+        <label>Name</label>
+        <input
+          formControlName="name"
+          type="text"
+          placeholder="Change Your Name"
+        />
+        <div
+          *ngIf="form.get('name').invalid && form.get('name').touched"
+          class="validation"
+        >
+          <small *ngIf="form.get('name').errors.required">
+            Name field cannot be empty
+          </small>
+
+          <small *ngIf="form.get('name').errors.minlength">
+            Name length must be more than
+            {{ form.get("name").errors.minlength.requiredLength }} characters
+            <br />
+            Now you have
+            {{ form.get("name").errors.minlength.actualLength }} character(s)
+          </small>
+
+          <small *ngIf="form.get('name').errors.maxlength">
+            Name length must be less than
+            {{ form.get("name").errors.maxlength.requiredLength }} characters
+            <br />
+            Now you have
+            {{ form.get("name").errors.maxlength.actualLength }} character(s)
+          </small>
+        </div>
+      </div>
+
+      <div class="form-control">
+        <label>Email</label>
+        <input
+          formControlName="email"
+          type="text"
+          placeholder="Change Your Email"
+        />
+        <div
+          *ngIf="form.get('email').invalid && form.get('email').touched"
+          class="validation"
+        >
+          <small *ngIf="form.get('email').errors.required">
+            Email field cannot be empty
+          </small>
+          <small *ngIf="form.get('email').errors.email">
+            Please enter a valid email
+          </small>
+        </div>
+      </div>
+
+      <div class="form-control">
+        <label>Your Feedback</label>
+        <textarea
+          formControlName="feedback"
+          style="resize: none;"
+          type="text"
+          rows="5"
+          placeholder="Change your feedback"
+        ></textarea>
+        <div
+          *ngIf="form.get('feedback').invalid && form.get('feedback').touched"
+          class="validation"
+        >
+          <small *ngIf="form.get('feedback').errors.required">
+            Feedback field cannot be empty
+          </small>
+        </div>
+      </div>
+
+      <div class="form-control">
+        <label>Rating</label>
+
+        <select formControlName="rate">
+          <option value="" selected disabled hidden>Rate us</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <button [disabled]="form.invalid" type="submit" class="btn">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
