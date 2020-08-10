@@ -11,9 +11,9 @@ export class CoffeePostComponent implements OnInit {
   post: Post;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
-    private postsService: PostsService,
-    private router: Router
+    private postsService: PostsService // private router: Router
   ) {}
 
   ngOnInit() {
@@ -22,7 +22,7 @@ export class CoffeePostComponent implements OnInit {
     });
   }
 
-  loadPoat() {
+  loadPost() {
     this.router.navigate(['/posts', 44]);
   }
 }
