@@ -6,6 +6,8 @@ import { AboutComponent } from './about/about.component';
 import { CoffeePostsComponent } from './posts/coffee-posts.component';
 import { CoffeePostComponent } from './post/coffee-post.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -15,6 +17,7 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
+    canActivate: [AuthGuard],
   },
   { path: 'posts', component: CoffeePostsComponent },
   { path: 'posts/:id', component: CoffeePostComponent },
@@ -22,6 +25,8 @@ const routes: Routes = [
     path: 'contacts',
     component: ContactsComponent,
   },
+  { path: 'error', component: ErrorPageComponent },
+  { path: '**', redirectTo: '/error' },
 ];
 
 @NgModule({

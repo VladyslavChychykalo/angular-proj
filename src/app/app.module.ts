@@ -14,6 +14,7 @@ import { CoffeePostsComponent } from './posts/coffee-posts.component';
 import { CoffeePostComponent } from './post/coffee-post.component';
 
 import { AppRoutingModule } from './app-routing.module';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AppRoutingModule } from './app-routing.module';
     ContactsComponent,
     CoffeePostsComponent,
     CoffeePostComponent,
+    ErrorPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
