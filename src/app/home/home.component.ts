@@ -32,6 +32,8 @@ export class HomeComponent implements OnInit {
     },
   ];
 
+  search: string = '';
+
   // isModalOpen = false;
   objForEditing = null;
 

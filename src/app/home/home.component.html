@@ -1,7 +1,11 @@
 <div>
   <app-post-form (onAdd)="addFeedback($event)"></app-post-form>
+
+  <label for="">Find feedback by email</label>
+  <input type="text" [(ngModel)]="search" />
+
   <app-post
-    *ngFor="let f of feedbacks"
+    *ngFor="let f of feedbacks | search: search"
     [feedback]="f"
     (onDelete)="deleteFeedback($event)"
     (onEdit)="editFeedback($event)"

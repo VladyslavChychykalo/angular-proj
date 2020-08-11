@@ -16,6 +16,7 @@ import { CoffeePostComponent } from './post/coffee-post.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     CoffeePostsComponent,
     CoffeePostComponent,
     ErrorPageComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,
